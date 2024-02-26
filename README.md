@@ -2,7 +2,6 @@
 
 ## Introdução
 
-
 ## Metodologia
 
 Para a metodologia empregada na construção do projeto solicitado, adotamos uma abordagem que valoriza a modularização e flexibilidade. Utilizamos diversas ferramentas, realizando a leitura e análise dos datasheets correspondentes. A estrutura do projeto foi dividida em partes, com a incorporação de variáveis de configuração, permitindo ajustes conforme as preferências do usuário. Essa abordagem não apenas facilita a manutenção do código, mas também aprimora a legibilidade e assegura escalabilidade. A base do projeto contém instruções essenciais, estabelecendo uma estrutura adaptável para futuras adições de maneira eficiente.
@@ -37,7 +36,7 @@ Após o conhecimento e análise das ferramentas, o projeto foi dividido nas segu
 
    1. Decisão de como o jogo iria ser renderizado (Limpando elementos específicos, ou recriando os mesmos no buffer).
    2. Aplicação dos códigos de geração do píxel de vídeo dentro das funções de exibição do jogo.
-   3. Transferindo os valores lidos do acelerômetro para a função de movimento do player (raquete).
+   3. Transferindo os valores lidos do acelerômetro para a função de movimento do jogador (raquete).
    4. Aplicando as funções dos botões no fluxo do programa (Opção do menu, pausar, continuar, iniciar e sair).
    5. Telas já pré-moldadas do menu, tela de vitória e derrota, encaixando-as no fluxo do programa.
 
@@ -48,6 +47,12 @@ Após o conhecimento e análise das ferramentas, o projeto foi dividido nas segu
    3. Ajuste fino no jogo através das constantes de configurações.
 
 ## Descrição do Projeto:
+
+### Acelerometro(G-Sensor)
+
+A placa vem com um módulo de sensor de acelerômetro digital (ADXL345), comumente conhecido como G-sensor. Este G-sensor é um acelerômetro de 3 eixos pequeno, fino e de baixissimo consumo de energia, com medição de alta resolução. A saída digitalizada é formatada como 16 bits em complemento de dois e pode ser acessada por meio da interface I2C.
+
+Conforme mencionado anteriormente, existem funções pré-configuradas para facilitar o uso do dispositivo. Inicialmente, foi necessário realizar a inicialização do sensor, seguida pela etapa de calibração e, por fim, a formatação dos dados recebidos. Após a conclusão desses procedimentos, uma função adicional foi disponibilizada para recuperar os valores nos três eixos (X, Y e Z). No contexto deste projeto específico, optou-se por utilizar o eixo "Z" para controlar o movimento do jogador (raquete).
 
 ## Resultados e conclusão
 
