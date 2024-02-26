@@ -87,8 +87,6 @@ Com o estudo feito de cada periférico a ser utilizado, partimos para o estabele
 
 Inicialmente há um Menu. Por meio do controle dos botões, o jogador pode escolher sair do jogo ou jogar. Só são utilizados nessa tela dois botões. O primeiro alterna entre as duas escolhas e o segundo dá enter. Selecionado enter para jogar, o sistema entra no loop do jogo até que o jogador vença ou perca. Nesta etapa, o controle do player é dado pelo acelerômetro do kit, sendo possível pausar o jogo por meio do botão. Com a finalização do jogo, o usuário retorna para o Menu.
 
-## Resultados e conclusão
-
 ## Resultados 
 
 ## Conclusão
