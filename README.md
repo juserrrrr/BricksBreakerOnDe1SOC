@@ -58,6 +58,8 @@ Conforme mencionado anteriormente, existem funções pré-configuradas para faci
 
 ## Referências
 
+DE1-SoC. DE1-SoC User Manual v.1.2.2. Altera Corporation, 2018.
+
 ## Autores
 
 - José Gabriel de Almeida Pontes
