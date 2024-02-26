@@ -27,7 +27,7 @@ Há 4 botões conectados a FPGA da placa. Quando um ou mais é pressionado, ele(
 
 Há um Header em C que pode ser incluído ao projeto:
 
-![Header PushButtons](public\buttons.png)
+![Header PushButtons](public/buttons.png)
 
 Esse header nos mostra a assinatura de 3 métodos que são utilizados no projeto. O primeiro é o KEY_open() que possibilita a abertura da comunicação do processador ARM com os botões da FPGA. O KEY_close() já realiza o contrário, encerrando a comunicação. O que é utilizado para leitura dos dados dos botões é o KEY_read(). Este método recebe um ponteiro de um inteiro que guarda os valores dos botões (0-Não pressionado e 1-Pressionado). Se todos os botões não estão pressionados, o retorno é 0b0000. Caso todos estejam pressionados, o retorno é 0b1111.
 
@@ -35,7 +35,7 @@ Esse header nos mostra a assinatura de 3 métodos que são utilizados no projeto
 
 Com o estudo feito de cada periférico a ser utilizado, partimos para o estabelecimento da lógica de controle do jogo:
 
-![Fluxo do Jogo](public\gameControl.png)
+![Fluxo do Jogo](public/gameControl.png)
 
 Inicialmente há um Menu. Por meio do controle dos botões, o jogador pode escolher sair do jogo ou jogar. Só são utilizados nessa tela dois botões. O primeiro alterna entre as duas escolhas e o segundo dá enter. Selecionado enter para jogar, o sistema entra no loop do jogo até que o jogador vença ou perca. Nesta etapa, o controle do player é dado pelo acelerômetro do kit, sendo possível pausar o jogo por meio do botão. Com a finalização do jogo, o usuário retorna para o Menu.
 
