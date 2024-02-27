@@ -79,6 +79,14 @@ A placa vem com um módulo de sensor de acelerômetro digital (ADXL345), comumen
 
 Conforme mencionado anteriormente, existem funções pré-configuradas para facilitar o uso do dispositivo. Inicialmente, foi necessário realizar a inicialização do sensor, seguida pela etapa de calibração e, por fim, a formatação dos dados recebidos. Após a conclusão desses procedimentos, uma função adicional foi disponibilizada para recuperar os valores nos três eixos (X, Y e Z). No contexto deste projeto específico, optou-se por utilizar o eixo "Z" para controlar o movimento do jogador (raquete).
 
+### VGA
+
+A FPGA possui uma saída VGA (Video Graphics Array), essa interface utiliza um conector de 15 pinos que transmite sinais analógicos de vídeo RGB (vermelho, verde e azul), bem como sinais de sincronização horizontal e vertical para coordenar a exibição da imagem. A sincronização e a configuração da resolução de saída foi pré-configurada no Sistema Operacional presente no processador que está ligado à FPGA, dessa forma, a utilização se dá através de funções na linguagem de programação C.
+
+Existem dois buffers configurados, um "traseiro" e um "frontal", o buffer que é mostrado no display é o frontal, e as novas informações são escritas no traseiro, para mostrar uma informação escrita, é necessario usar a função "video_show()", que alterna os buffers, jogando o frontal para trás e vice versa. 
+
+Além da "video_show()", outras funções importantes para o funcionamento do jogo é a "video_box()", que desenha um quadrado na tela, além da "video_erase()" e "video_clear()", que limpam os caracteres da tela, e os demais pixels, respectivamente. Uma característica interessante da função "video_box()", é a diferença de velocidade ao utilizá-la para desenhar um quadrado, quando comparada à desenhar pixel por pixel usando a função "video_pixel()", a primeira é extremamente mais rápida.
+
 ### Fluxo do Jogo
 
 Com o estudo feito de cada periférico a ser utilizado, partimos para o estabelecimento da lógica de controle do jogo:
@@ -87,9 +95,12 @@ Com o estudo feito de cada periférico a ser utilizado, partimos para o estabele
 
 Inicialmente há um Menu. Por meio do controle dos botões, o jogador pode escolher sair do jogo ou jogar. Só são utilizados nessa tela dois botões. O primeiro alterna entre as duas escolhas e o segundo dá enter. Selecionado enter para jogar, o sistema entra no loop do jogo até que o jogador vença ou perca. Nesta etapa, o controle do player é dado pelo acelerômetro do kit, sendo possível pausar o jogo por meio do botão. Com a finalização do jogo, o usuário retorna para o Menu.
 
-## Resultados 
 
-## Conclusão
+## Resultados e Conclusão
+
+O jogo possui todos os requisitos solicitados, é possível pausar e reiniciar um jogo ao vencer ou perder. O controle da barra do jogador é feito através do acelerômetro, e a velocidade é alterada de acordo com a inclinação do sensor, é possível controlar a direção da bola ao acertá-la no lado direito ou esquerdo da barra.
+
+![](https://github.com/juserrrrr/BricksBreakerOnDe1SOC/blob/mendes/public/funcionamento.gif)
 
 ## Referências
 
